@@ -1,0 +1,55 @@
+<!-- utilização dos icones da font-awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Instalação do bootstrap toggle -->
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+<div class="carAndForm">
+    <div class="divColumnCarAndInfo">
+        <img class="imgFordRanger" src="assets/ranger farol desligado.png" alt="Logo da Ford">
+        <div class="divInfoCar">
+            <span class="carTitle">Ford Ranger</span>
+            <span class="spanInfoCar">Experimente a potência e a confiabilidade da Ford Ranger. Construída para qualquer aventura, com design inteligente para o uso diário.</span>
+        </div>    
+        <div class="vehicle-features">
+            <div class="features">
+                <i id="iconCarFeatures" class="fa-solid fa-car"></i>
+                <span>Motor potente</span>
+            </div>
+
+            <div class="features">
+                <i id="iconCarFeatures" class="fa-solid fa-road"></i>
+                <span>Capacidade off-road</span>
+            </div>
+
+            <div class="features">
+                <i id="iconCarFeatures" class="fa-solid fa-gauge"></i>
+                <span>Eficiência de combustível</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="loginForm">
+        <img class="imgFordLogo" src="assets/ford.png" alt="Ford Ranger">
+        <span class="spnWelcome">Boas-vindas</span>
+        <div class="divInput">
+            <i id="userIcon" class="fa-solid fa-user fa-sm" ></i>
+            <input [(ngModel)]="email" placeholder="Insira o seu e-mail" #emailInput class="emailInput" type="email" required>
+            <i id="infoIcon" class="fa-solid fa-circle-info fa-sm" (click)="infoApp()"></i>
+        </div>
+
+        <div class="divInput">
+            <i id="userIcon" class="fa-solid fa-lock fa-sm"></i>
+            <input [(ngModel)]="senha" placeholder="Insira a sua senha" class="passwordInput" type="password" required>
+        </div>
+
+        <div class="form-check form-switch">
+            <span class="autoLogin">Logar automaticamente</span>
+            <input class="form-check-input" type="checkbox" id="meuToggle">
+        </div>
+
+        <button (click)="verificarUser()" [ngClass]="{ 'bttnEntrarAtivo': validarCampos(), 'bttnEntrarInativo': !validarCampos() }">Entrar</button>
+    </div>
+    
+</div>

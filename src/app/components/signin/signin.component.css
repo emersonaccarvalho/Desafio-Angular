@@ -1,0 +1,172 @@
+body{
+    background-color: #aed2f0;
+}
+
+
+.spnWelcome{
+    color: var(--corVerde);
+    align-self: center;
+    font-weight: bold;
+}
+
+.carAndForm{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 900px;
+    height: fit-content;
+
+}
+
+.imgFordRanger{
+    max-width: 700px;
+    width: 100%;
+}
+
+.divColumnCarAndInfo{
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    height: max-content;
+}
+
+.divInfoCar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.carTitle{
+    font-size: 36px;
+    color: var(--corAzul);
+    font-weight: bold;
+}
+
+.spanInfoCar{
+    max-height: 200px;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.vehicle-features{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+}
+
+.features{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#iconCarFeatures{
+    color: var(--corAzul);
+}
+
+.imgFordLogo{
+    width: 170px;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+#userIcon, #infoIcon{
+    color: var(--corVerde);
+    cursor: pointer;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(124, 124, 124, 0.116);
+    gap: 10px;
+    max-width: 400px;
+    width: 100%;
+    padding: 45px 30px;
+    min-height: 500px;
+    border: solid 1px #0000001f;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px 2px #0000005e;
+}
+
+.emailInput{
+    height: 25px;
+    max-width: 310px;
+    width: 100%;
+    padding: 0px 25px 0px 25px;
+    border-radius: 2px;
+    border: solid 1px;
+}
+
+.passwordInput{
+    height: 25px;
+    max-width: 310px;
+    width: 100%;
+    margin-right: 10px;
+    padding-left: 25px;
+    border-radius: 2px;
+    border: solid 1px;
+}
+
+.divInput{
+    position: relative;
+
+}
+
+#userIcon{
+    position: absolute;
+    left: 5px;
+    top: 12px;
+}
+
+#infoIcon{
+    margin-left: 5px;
+}
+
+.form-check{
+    align-self: flex-end;
+    margin-right: 30px;
+}
+
+.autoLogin{
+    font-size: 12px;
+    align-self: center;
+}
+
+.form-check-input {
+    align-self: center;
+    margin-top: 6px;
+}
+
+
+.form-check-input:checked {
+    background-color: var(--corVerde);
+    border-color: var(--corVerde);
+  }
+
+  .bttnEntrarInativo{
+    background-color: rgba(75, 75, 75, 0.527);
+    border: solid 0px;
+    color: rgba(255, 255, 255, 0.945);
+    border-radius: 2px;
+    max-width: 310px;
+    box-shadow: 4px 4px 4px 2px #bdb9b9;
+    cursor: pointer;
+  }
+
+  .bttnEntrarAtivo{
+    background-color: var(--corVerde);
+    border: solid 0px;
+    color: rgba(255, 255, 255, 0.945);
+    border-radius: 2px;
+    max-width: 310px;
+    box-shadow: 4px 4px 4px 2px #bdb9b9;
+    cursor: pointer;
+  }
