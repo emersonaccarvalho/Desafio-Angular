@@ -1,6 +1,4 @@
-body{
-    background-color: #aed2f0;
-}
+
 
 
 .spnWelcome{
@@ -14,9 +12,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    min-height: 900px;
-    height: fit-content;
-
+    height: 100%;
 }
 
 .imgFordRanger{
@@ -27,8 +23,12 @@ body{
 .divColumnCarAndInfo{
     display: flex;
     flex-direction: column;
-    min-height: 500px;
-    height: max-content;
+    background-color: #e7edf2;
+    width: 50%;
+    height: 100vh;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 .divInfoCar{
@@ -71,6 +71,11 @@ body{
     color: var(--corAzul);
 }
 
+.spanCarFeature{
+    overflow: auto ;
+}
+
+
 .imgFordLogo{
     width: 170px;
     align-self: center;
@@ -85,20 +90,31 @@ body{
 .loginForm{
     display: flex;
     flex-direction: column;
-    background-color: rgba(124, 124, 124, 0.116);
+    background-color: #f9fafb;
     gap: 10px;
-    max-width: 400px;
-    width: 100%;
+    width: 50%;
     padding: 45px 30px;
-    min-height: 500px;
+    height: 100vh;
+    justify-content: center;
+}
+
+.form2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: fit-content;
     border: solid 1px #0000001f;
-    border-radius: 5px;
+    padding: 50px;
+    align-self: center;
     box-shadow: 4px 4px 4px 2px #0000005e;
+    background-color: #ffffff;
+
+
 }
 
 .emailInput{
     height: 25px;
-    max-width: 310px;
+    max-width: 290px;
     width: 100%;
     padding: 0px 25px 0px 25px;
     border-radius: 2px;
@@ -107,7 +123,7 @@ body{
 
 .passwordInput{
     height: 25px;
-    max-width: 310px;
+    max-width: 290px;
     width: 100%;
     margin-right: 10px;
     padding-left: 25px;
@@ -117,6 +133,7 @@ body{
 
 .divInput{
     position: relative;
+    min-width: 320px;
 
 }
 
@@ -156,7 +173,7 @@ body{
     border: solid 0px;
     color: rgba(255, 255, 255, 0.945);
     border-radius: 2px;
-    max-width: 310px;
+    max-width: 290px;
     box-shadow: 4px 4px 4px 2px #bdb9b9;
     cursor: pointer;
   }
@@ -166,7 +183,16 @@ body{
     border: solid 0px;
     color: rgba(255, 255, 255, 0.945);
     border-radius: 2px;
-    max-width: 310px;
+    max-width: 290px;
     box-shadow: 4px 4px 4px 2px #bdb9b9;
     cursor: pointer;
+  }
+
+  @media (max-width:870px){
+    .divColumnCarAndInfo{
+        display: none;
+    }
+    .loginForm{
+        width: 100vw;
+    }
   }

@@ -15,22 +15,23 @@
         <div class="vehicle-features">
             <div class="features">
                 <i id="iconCarFeatures" class="fa-solid fa-car"></i>
-                <span>Motor potente</span>
+                <span class="spanCarFeature">Motor potente</span>
             </div>
 
             <div class="features">
                 <i id="iconCarFeatures" class="fa-solid fa-road"></i>
-                <span>Capacidade off-road</span>
+                <span class="spanCarFeature">Capacidade off-road</span>
             </div>
 
             <div class="features">
                 <i id="iconCarFeatures" class="fa-solid fa-gauge"></i>
-                <span>Eficiência de combustível</span>
+                <span class="spanCarFeature">Eficiência de combustível</span>
             </div>
         </div>
     </div>
 
     <div class="loginForm">
+        <div class="form2">
         <img class="imgFordLogo" src="assets/ford.png" alt="Ford Ranger">
         <span class="spnWelcome">Boas-vindas</span>
         <div class="divInput">
@@ -50,6 +51,7 @@
         </div>
 
         <button (click)="verificarUser()" [ngClass]="{ 'bttnEntrarAtivo': validarCampos(), 'bttnEntrarInativo': !validarCampos() }">Entrar</button>
+    </div>
     </div>
     
 </div>
