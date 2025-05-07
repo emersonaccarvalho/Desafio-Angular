@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 
 
 
@@ -134,18 +135,17 @@
 .divInput{
     position: relative;
     min-width: 320px;
-
+justify-content: center;
 }
 
 #userIcon{
     position: absolute;
     left: 5px;
-    top: 12px;
 }
 
 #infoIcon{
     margin-left: 5px;
-}
+align-items: center;}
 
 .form-check{
     align-self: flex-end;

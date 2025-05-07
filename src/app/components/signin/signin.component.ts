@@ -11,8 +11,9 @@ import { FormsModule } from '@angular/forms';
 export class SigninComponent {
   @ViewChild('emailInput') inputEmail!: ElementRef;
   @ViewChild('senhaInput') inputSenha!: ElementRef;
- 
+  @ViewChild('elementPopupInfo') infoPopup!: ElementRef;
   infoApp(){
+    this.infoPopup.nativeElement.style.display = "flex";
     alert("Por favor, insira o e-mail associado à sua conta para poder acessar o sistema.")
     this.inputEmail.nativeElement.focus();
   }
