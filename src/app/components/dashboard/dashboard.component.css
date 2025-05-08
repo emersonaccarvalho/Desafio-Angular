@@ -6,16 +6,16 @@ h1{
     display: flex;
     flex-direction: column;
     width: 160px;
-    border: solid 1px #0000007e;
+    border: solid 1px #ffffff;
     box-shadow: 4px 4px 4px 2px #00000034;
+    border-radius: 10px;
 }
 
 .spanDivModel{
     height: 40px;
     padding: 8px  ;
-    background-color: #F7F7F7;
     border-bottom: solid 1px #00000031;
-    color: black;
+    color: rgb(255, 255, 255);
 
 }
 
@@ -43,7 +43,7 @@ option:hover{
 
 .spanInfoBlue{
     margin-left: 20px;
-    color: var(--corDarkBlue);
+    color: #ffffff;
     font-size: 22px;
     margin-bottom: 0px;
 }
@@ -51,7 +51,7 @@ option:hover{
 .spanSubtitle{
     margin-left: 20px;
     height:min-content;
-    color: rgba(0, 0, 0, 0.548);
+    color: #ffffff;
     align-items: flex-start;
 }
 
@@ -60,11 +60,15 @@ option:hover{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px;
+    background: linear-gradient(to bottom, var(--corHighDarkBlue) 50%, #1b334bf1 50%);
+    border: solid 1px #ffffff;
+    border-radius: 10px;
+    max-width: 800px;
+    padding: 20px;
 }
 
 .centralImageVehicle img {
-    width: 50%;
+    width: 100%;
     align-self: center;
 }
 
@@ -87,7 +91,7 @@ option:hover{
 }
 
 .backgroundAzulTable{
-    background-color: var(--corDarkBlue);
+    background-color: var(--corHighDarkBlue);
     color: white;
 }
 
@@ -96,16 +100,27 @@ option:hover{
     display: flex;
     flex-direction: column;
     align-self: center;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    max-width: 1500px;
     width: 100%;
     gap: 15px;
-    margin: 20px;
+    height: 100vh;
+    background: linear-gradient(to bottom, var(--corHighDarkBlue) 50%, #ffffff 50%);
+}
+
+.divMainPage2{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 30px;
+    max-width: 1000px;
+
 }
 
 
 .divMainModel:hover{
     border-color: var(--corLightBlue);
-    border-width: 2px;
 }

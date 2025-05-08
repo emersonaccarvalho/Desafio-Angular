@@ -23,7 +23,7 @@
 .divColumnCarAndInfo{
     display: flex;
     flex-direction: column;
-    background-color: #e7edf2;
+    background-color: #ffffff;
     width: 50%;
     height: 100vh;
     padding: 20px;
@@ -108,7 +108,7 @@
 .loginForm{
     display: flex;
     flex-direction: column;
-    background-color: #f9fafb;
+    background-color: #e7edf2;
     gap: 10px;
     width: 50%;
     padding: 45px 30px;

@@ -1,7 +1,8 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import * as bootstrap from 'bootstrap';
+import confetti from 'canvas-confetti';
 
 
 
@@ -49,7 +50,7 @@ export class SigninComponent implements AfterViewInit {
     }
   }
   
-  validarCampos(): boolean {
+  validarCampos(): Boolean {
     return this.email.trim() !== '' && this.senha.trim() !== '';
   }
 
@@ -60,6 +61,7 @@ export class SigninComponent implements AfterViewInit {
       this.credenciaisCorretas = false;
     } else if (this.email == "admin" && this.senha == "123456"){
       this.credenciaisCorretas = true;
+      this.soltarConfete()
     } else {
       this.credenciaisCorretas = false;
 
@@ -67,6 +69,29 @@ export class SigninComponent implements AfterViewInit {
   }
 
 
-  
+  soltarConfete() {
+    const duration =  500;
+    const end = Date.now() + duration;
+
+    (function frame() {
+      confetti({
+        particleCount: 7,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+      });
+      confetti({
+        particleCount: 7,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  }
+
   
 }
