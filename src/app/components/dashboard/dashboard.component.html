@@ -1,2 +1,70 @@
-<p>dashboard works!</p>
-<button (click)="ExecutarFuncao()">Clique aqui</button>
+<div class="divMainPage">
+    <!-- div geral com todos os elementos da página -->
+
+    <h1>Dashboard Ford</h1>
+    <div class="groupperDiv">
+        <!-- Div que agrupará os menus superiores -->
+
+        <div class="divMainModel">
+            <span class="spanDivModel">Veículo</span>
+            <select class="form-select" aria-label="Default select example">
+                <option value="1">Ranger</option>
+                <option value="2">Mustang</option>
+                <option value="3">Territory</option>
+                <option value="4">Bronco Sport</option>
+            </select>
+        </div>
+
+        <div class="divMainModel">
+            <span class="spanDivModel">Total de vendas</span>
+            <span class="spanInfoBlue">1500</span>
+            <span class="spanSubtitle">Und.</span>
+        </div>
+
+        <div class="divMainModel">
+            <span class="spanDivModel">Conectados</span>
+            <span class="spanInfoBlue">500</span>
+            <span class="spanSubtitle">Und.</span>
+        </div>
+
+        <div class="divMainModel">
+            <span class="spanDivModel">Update Software</span>
+            <span class="spanInfoBlue">750</span>
+            <span class="spanSubtitle">Und.</span>
+        </div>
+
+    </div>
+
+    <div class="centralImageVehicle">
+
+        <img src="/assets/mustang.png" alt="">
+    </div>
+
+    <div class="divTable">
+    <table class="table custom-table">
+        <thead>
+        <tr>
+            <th class="backgroundAzulTable" style="min-width: 220px;" scope="col">Código-Vin</th>
+            <th class="backgroundAzulTable" style="min-width: 100px;"  scope="col">Odômetro</th>
+            <th class="backgroundAzulTable" style="min-width: 210px; text-align: center;"  scope="col">Nível de Combustível</th>
+            <th class="backgroundAzulTable" style="min-width: 50px;"  scope="col">Status</th>
+            <th class="backgroundAzulTable" style="min-width: 70px;"  scope="col">Lat.</th>
+            <th class="backgroundAzulTable" style="min-width: 72px;"  scope="col">Long.</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td style="min-width: 220px;"  scope="row">2FRHDUYS2Y63NHD22454</td>
+            <td style="min-width: 100px;">50000 km</td>
+            <td style="min-width: 210px; text-align: center;">90%</td>
+            <td style="min-width: 50px;">on</td>
+            <td style="min-width: 70px;">-12,2322</td>
+            <td style="min-width: 70px;">-35,2314</td>
+
+        </tr>
+        
+        </tbody>
+    </table>
+    </div>
+
+</div>

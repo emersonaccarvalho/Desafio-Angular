@@ -1,4 +1,3 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 
 
 
@@ -83,6 +82,24 @@
     margin-bottom: 20px;
 }
 
+#elementPopupInfo .modal-dialog {
+    margin-top: 10vh;
+    max-width: 600px;
+  }
+  
+  #elementPopupInfo .modal-content {
+    padding: 1.5rem;
+  }
+  
+  .modal-content{
+    max-width: 370px;
+  }
+  
+  .spanErrorPopup{
+    font-size: 18px;
+    text-align: center;
+  }
+
 #userIcon, #infoIcon{
     color: var(--corVerde);
     cursor: pointer;
@@ -103,7 +120,8 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: fit-content;
+    max-width: 400px ;
+    width: 100%;
     border: solid 1px #0000001f;
     padding: 50px;
     align-self: center;
@@ -122,6 +140,17 @@
     border: solid 1px;
 }
 
+.btn-close{
+    align-self: flex-end;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.imgInfoPopup{
+    align-self: center;
+    justify-self: center;
+}
+
 .passwordInput{
     height: 25px;
     max-width: 290px;
@@ -130,6 +159,24 @@
     padding-left: 25px;
     border-radius: 2px;
     border: solid 1px;
+}
+
+.bi-check-circle-fill{
+    margin-top: -2px;
+    align-self:flex-start;
+    color: var(--corVerde);
+    font-size: 35px;
+    align-self: center;
+}
+
+
+
+.bi-x-circle{
+    margin-top: -2px;
+
+    align-self:center;
+    color:firebrick;
+    font-size: 35px;
 }
 
 .divInput{

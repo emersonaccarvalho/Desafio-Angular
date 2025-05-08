@@ -43,7 +43,7 @@
 
         <div class="divInput">
             <i id="userIcon" class="bi bi-key-fill"></i>
-            <input [(ngModel)]="senha" placeholder="Insira a sua senha" class="passwordInput" type="password" required>
+            <input [(ngModel)]="senha" placeholder="Insira a sua senha" #senhaInput class="passwordInput" type="password" required>
         </div>
 
         <div class="form-check form-switch">
@@ -51,16 +51,51 @@
             <input class="form-check-input" type="checkbox" id="meuToggle">
         </div>
 
-        <button (click)="verificarUser()" [ngClass]="{ 'bttnEntrarAtivo': validarCampos(), 'bttnEntrarInativo': !validarCampos() }">Entrar</button>
+        <button [ngClass]="{ 'bttnEntrarAtivo': validarCampos(), 'bttnEntrarInativo': !validarCampos() }" (click)="showPopupError()">Entrar</button>
     </div>
     </div>
 
-    <div id="infoPopup" class="modal-body">
-        <h5>Popover in a modal</h5>
-        <p>This <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
-        <hr>
-        <h5>Tooltips in a modal</h5>
-        <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
-      </div>
+    <div #elementPopupInfo id="elementPopupInfo" class="modal fade" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content" style="padding: 0;">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar" (click)="focusEmail()"></button>
+
+            <div class="modal-body d-flex justify-content-between align-items-center" style="padding-top: 0;">
+                <div style="display: flex; flex-direction: column; margin-left: 20px;">
+                    <i style="margin-bottom: 10px;" class="bi bi-x-circle"></i>
+
+                    <span class="spanErrorPopup">Para acessar o sistema, informe as suas credenciais de login.</span>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+  
+    <div #popupErrorCredentials id="popupErrorCredentials" class="modal fade" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar" (click)="focusEmail()"></button>
+            <div class="modal-body d-flex justify-content-between align-items-center">
+                @if(!credenciaisCorretas){
+                    <div class="w-100" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 0;">
+                        <i style="margin-bottom: 10px;" class="bi bi-x-circle"></i>
+                        <div style="display: flex; flex-direction: column; margin-left: 20px;">
+                         <span class="spanErrorPopup">E-mail ou senha inválidos.</span>
+                         <span class="spanErrorPopup">Por favor, revise-os.</span>
+                        </div>
+                    </div>
+                } @else {
+                    <div class="w-100" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 0;">
+                        <i style="margin-bottom: 10px;" class="bi bi-check-circle-fill"></i>
+                        <div style="display: flex; flex-direction: column; margin-left: 20px;">
+                         <span class="spanErrorPopup">Acesso permitido!</span>
+                         <span class="spanErrorPopup">Aguarde enquanto te redirecionamos à página inicial!</span>
+                        </div>
+                    </div>
+              }
+            </div>
+        </div>
+        </div>
+    </div>
     
 </div>

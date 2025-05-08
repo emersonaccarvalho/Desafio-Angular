@@ -1,6 +1,9 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import * as bootstrap from 'bootstrap';
+
+
 
 @Component({
   selector: 'app-signin',
@@ -8,19 +11,44 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.css'
 })
-export class SigninComponent {
+export class SigninComponent implements AfterViewInit {
+  ngAfterViewInit(): void {
+    this.focusEmail()
+  }
+  
   @ViewChild('emailInput') inputEmail!: ElementRef;
   @ViewChild('senhaInput') inputSenha!: ElementRef;
   @ViewChild('elementPopupInfo') infoPopup!: ElementRef;
-  infoApp(){
-    this.infoPopup.nativeElement.style.display = "flex";
-    alert("Por favor, insira o e-mail associado à sua conta para poder acessar o sistema.")
-    this.inputEmail.nativeElement.focus();
-  }
+  @ViewChild('popupErrorCredentials') popupError!: ElementRef;
   
+  infoApp() {
+    const popupInfo = new bootstrap.Modal(this.infoPopup.nativeElement);
+    popupInfo.show();    
+  }
+
+
+
+  showPopupError(){    
+
+    const popupError = new bootstrap.Modal(this.popupError.nativeElement);
+    popupError.show();
+    this.verificarUser();   
+  }
+
+  credenciaisCorretas:Boolean = false;
   email = '';
   senha = '';
 
+  
+  focusEmail() {
+    if (this.email.trim() === '') {
+      this.inputEmail?.nativeElement.focus();
+      return
+    } else if (this.senha.trim() === '') {
+      this.inputSenha?.nativeElement.focus();
+    }
+  }
+  
   validarCampos(): boolean {
     return this.email.trim() !== '' && this.senha.trim() !== '';
   }
@@ -29,13 +57,16 @@ export class SigninComponent {
     
     
     if (!this.validarCampos()){
-      alert("O e-mail ou a senha estão em branco. Preencha!")
+      this.credenciaisCorretas = false;
     } else if (this.email == "admin" && this.senha == "123456"){
-      alert("Acesso permitido!")
+      this.credenciaisCorretas = true;
     } else {
-      alert("Acesso negado!")
+      this.credenciaisCorretas = false;
+
     } 
   }
+
+
   
   
 }
