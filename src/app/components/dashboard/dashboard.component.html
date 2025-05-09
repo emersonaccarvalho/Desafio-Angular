@@ -46,10 +46,7 @@
         </div>
 
         <div class="centralImageVehicle">
-            @if(selectedVehicle === 1){
-            <img src="assets/ranger farol desligado.png" alt="Imagem do veículo">
-            }
-
+            <img [src]="vehicleImages[selectedVehicle-1]" alt="Imagem do veículo">
         </div>
 
         <!-- outra table teste -->

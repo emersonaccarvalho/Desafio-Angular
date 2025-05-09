@@ -12,6 +12,13 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements AfterViewInit {
  
+  vehicleImages = [
+    'assets/Ranger Farol Desligado.png',
+    'assets/Mustang Farol Desligado.png',
+    'assets/Territory Farol Desligado.png',
+    'assets/Bronco Farol Desligado.png'
+];
+
   @ViewChild('dropdownVehicle') selectVehicle!: ElementRef;
   selectedVehicle: number = 1;
 
