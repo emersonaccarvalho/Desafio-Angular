@@ -2,9 +2,10 @@
     <!-- div geral com todos os elementos da página -->
 
   <div class="divMainPage2">
-        <div class="titleAndSelect" style="display: flex; flex-direction: row; max-width: 1200px; justify-content: space-between;">
+    
+        <div class="titleAndSelect">
             <h1>Dashboard Ford</h1>
-            <select class="form-select" aria-label="Default select example">
+            <select #dropdownVehicle (change)="getSelectedVehicle()" class="form-select" aria-label="Default select example">
                 <option value="1">Ranger</option>
                 <option value="2">Mustang</option>
                 <option value="3">Territory</option>
@@ -16,29 +17,28 @@
             <!-- Div que agrupará os menus superiores -->
 
             <div class="divMainModel">
-                <span class="spanDivModel">Veículo</span>
-                <select class="form-select" aria-label="Default select example">
-                    <option value="1">Ranger</option>
-                    <option value="2">Mustang</option>
-                    <option value="3">Territory</option>
-                    <option value="4">Bronco Sport</option>
-                </select>
-            </div>
-
-            <div class="divMainModel">
+                <div style="display: flex; flex-direction: row; padding-left: 20px; border-bottom: solid 1px; width: 100%;">
+                <i class="bi bi-receipt-cutoff"></i>
                 <span class="spanDivModel">Total de vendas</span>
+                </div>
                 <span class="spanInfoBlue">1500</span>
                 <span class="spanSubtitle">Und.</span>
             </div>
 
             <div class="divMainModel">
+                <div style="display: flex; flex-direction: row; padding-left: 20px; border-bottom: solid 1px; width: 100%;">
+                <i class="bi bi-wifi"></i>
                 <span class="spanDivModel">Conectados</span>
+                </div>
                 <span class="spanInfoBlue">500</span>
                 <span class="spanSubtitle">Und.</span>
             </div>
 
             <div class="divMainModel">
+                <div style="display: flex; flex-direction: row; padding-left: 20px; border-bottom: solid 1px; width: 100%;">
+                <i class="bi bi-download"></i>
                 <span class="spanDivModel">Update Software</span>
+                </div>
                 <span class="spanInfoBlue">750</span>
                 <span class="spanSubtitle">Und.</span>
             </div>
@@ -46,35 +46,37 @@
         </div>
 
         <div class="centralImageVehicle">
+            @if(selectedVehicle === 1){
+            <img src="assets/ranger farol desligado.png" alt="Imagem do veículo">
+            }
 
-            <img src="assets/Mustang Farol Ligado.png" alt="Imagem do veículo">
         </div>
 
-        <div class="divTable">
-        <table class="table custom-table">
-            <thead>
-            <tr>
-                <th class="backgroundAzulTable" style="min-width: 220px;" scope="col">Código-Vin</th>
-                <th class="backgroundAzulTable" style="min-width: 100px;"  scope="col">Odômetro</th>
-                <th class="backgroundAzulTable" style="min-width: 210px; text-align: center;"  scope="col">Nível de Combustível</th>
-                <th class="backgroundAzulTable" style="min-width: 50px;"  scope="col">Status</th>
-                <th class="backgroundAzulTable" style="min-width: 70px;"  scope="col">Lat.</th>
-                <th class="backgroundAzulTable" style="min-width: 72px;"  scope="col">Long.</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td style="min-width: 220px;"  scope="row">2FRHDUYS2Y63NHD22454</td>
-                <td style="min-width: 100px;">50000 km</td>
-                <td style="min-width: 210px; text-align: center;">90%</td>
-                <td style="min-width: 50px;">on</td>
-                <td style="min-width: 70px;">-12,2322</td>
-                <td style="min-width: 70px;">-35,2314</td>
+        <!-- outra table teste -->
+        <div class="divNewTable">
+            <table class="newtable">
+                <thead>
+                    <tr>
+                        <th class="firstThTable">Código-Vin</th>
+                        <th>Odômetro</th>
+                        <th style="width: 170px;">Nível de combustível</th>
+                        <th style="width: 80px;">Status</th>
+                        <th>Lat.</th>
+                        <th class="lastThTable">Long.</th>
+                    </tr>
+                </thead>
 
-            </tr>
-            
-            </tbody>
-        </table>
+                <tbody>
+                    <tr>
+                        <td>2FRHDUYS2Y63NHD22454</td>
+                        <td>50000 km</td>
+                        <td>90%</td>
+                        <td>on</td>
+                        <td>-12,2322</td>
+                        <td>-35,2314</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
     </div>

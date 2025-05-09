@@ -1,0 +1,14 @@
+.spanItemsMenu{
+    padding: 10px 30px;
+    background-color: var(--corHighDarkBlue);
+    color: white;
+}
+
+.offcanvas-body{
+    padding: 0;
+}
+
+.divWithSpanMenu{
+    display: flex; 
+    flex-direction: column;
+}
