@@ -1,14 +1,49 @@
 .spanItemsMenu{
     padding: 10px 30px;
-    background-color: var(--corHighDarkBlue);
     color: white;
 }
 
 .offcanvas-body{
     padding: 0;
+    
+}
+
+.offcanvas-header{
+    background-color: var(--corHighDarkBlue);
+    
 }
 
 .divWithSpanMenu{
     display: flex; 
     flex-direction: column;
+}
+
+.custom-background {
+    background-color: var(--corHighDarkBlue);
+  }
+  
+  .divMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.fordLogo{
+    width: 50%;
+    align-self: center;
+    margin-left: 70px;
+}
+
+.spanItemsMenu:hover{
+    background-color: white;
+    color: var(--corHighDarkBlue);
+    cursor: pointer;
+}
+
+.btn-primary{
+    background-color: white;
+    color: var(--corHighDarkBlue);
 }

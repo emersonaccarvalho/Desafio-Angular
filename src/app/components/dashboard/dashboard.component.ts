@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { MainMenuComponent } from '../main-menu/main-menu.component';
+
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,MainMenuComponent],
   standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'

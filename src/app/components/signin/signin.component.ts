@@ -5,7 +5,6 @@ import * as bootstrap from 'bootstrap';
 import confetti from 'canvas-confetti';
 
 
-
 @Component({
   selector: 'app-signin',
   imports: [CommonModule,FormsModule],
