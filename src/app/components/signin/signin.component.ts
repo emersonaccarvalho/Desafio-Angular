@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import * as bootstrap from 'bootstrap';
 import confetti from 'canvas-confetti';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { Router} from '@angular/router';
 
 
 @Component({
@@ -12,6 +14,8 @@ import confetti from 'canvas-confetti';
   styleUrl: './signin.component.css'
 })
 export class SigninComponent implements AfterViewInit {
+  constructor(private http:HttpClient, private routes:Router){}
+
   ngAfterViewInit(): void {
     this.focusEmail()
   }
@@ -55,7 +59,6 @@ export class SigninComponent implements AfterViewInit {
 
   verificarUser(){
     
-    
     if (!this.validarCampos()){
       this.credenciaisCorretas = false;
     } else if (this.email == "admin" && this.senha == "123456"){
@@ -65,6 +68,22 @@ export class SigninComponent implements AfterViewInit {
       this.credenciaisCorretas = false;
 
     } 
+  }
+
+  conferirDados():void {
+    this.http.post("http://localhost:3001/login",{nome:this.email,senha:this.senha},{
+      headers: new HttpHeaders({"Accept":"application/json"}), 
+      withCredentials : false
+    }).subscribe({
+      next: (res) => {
+        console.log("oi")
+        this.credenciaisCorretas = true;
+        this.soltarConfete();
+      },
+      error:(err) => {
+        this.credenciaisCorretas = false;
+      }
+    })
   }
 
 

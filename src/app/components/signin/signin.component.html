@@ -5,6 +5,9 @@
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 
+
+
+
 <div class="carAndForm">
  
     <div class="divColumnCarAndInfo">
@@ -35,6 +38,7 @@
         <div class="form2">
         <img class="imgFordLogo" src="assets/ford.png" alt="Ford Ranger">
         <span class="spnWelcome">Boas-vindas</span>
+
         <div class="divInput">
             <i id="userIcon" class="bi bi-person-fill"></i>
             <input [(ngModel)]="email" placeholder="Insira o seu e-mail" #emailInput class="emailInput" type="email" required>
@@ -52,8 +56,8 @@
             <input class="form-check-input" type="checkbox" id="meuToggle">
         </div>
 
-        <button [ngClass]="{ 'bttnEntrarAtivo': validarCampos(), 'bttnEntrarInativo': !validarCampos() }" (click)="showPopupError()">Entrar</button>
-    </div>
+        <button [ngClass]="{ 'bttnEntrarAtivo': validarCampos(), 'bttnEntrarInativo': !validarCampos() }" (click)="conferirDados()">Entrar</button>
+        </div>
     </div>
 
     <div #elementPopupInfo id="elementPopupInfo" class="modal fade" tabindex="-1" aria-hidden="true">
