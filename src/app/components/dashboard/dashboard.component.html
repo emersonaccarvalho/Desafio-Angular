@@ -1,6 +1,6 @@
 
 <div class="divMainPage">
- <app-main-menu style="align-self: flex-start;"></app-main-menu>
+ <app-main-menu style="align-self: flex-start; margin-top: 100px;"></app-main-menu>
 
     <!-- div geral com todos os elementos da página -->
 
@@ -24,7 +24,7 @@
                 <i class="bi bi-receipt-cutoff"></i>
                 <span class="spanDivModel">Total de vendas</span>
                 </div>
-                <span class="spanInfoBlue">1500</span>
+                <span class="spanInfoBlue">{{vehicleVolumetotal}}</span>
                 <span class="spanSubtitle">Und.</span>
             </div>
 
@@ -33,7 +33,7 @@
                 <i class="bi bi-wifi"></i>
                 <span class="spanDivModel">Conectados</span>
                 </div>
-                <span class="spanInfoBlue">500</span>
+                <span class="spanInfoBlue">{{vehicleConnected}}</span>
                 <span class="spanSubtitle">Und.</span>
             </div>
 
@@ -42,14 +42,14 @@
                 <i class="bi bi-download"></i>
                 <span class="spanDivModel">Update Software</span>
                 </div>
-                <span class="spanInfoBlue">750</span>
+                <span class="spanInfoBlue">{{vehicleSoftwareUpdates}}</span>
                 <span class="spanSubtitle">Und.</span>
             </div>
 
         </div>
 
         <div class="centralImageVehicle">
-            <img [src]="vehicleImages[selectedVehicle-1]" alt="Imagem do veículo">
+            <img [src]="vehicleImg" alt="Imagem do veículo">
         </div>
 
         <!-- outra table teste -->
@@ -68,12 +68,12 @@
 
                 <tbody>
                     <tr>
-                        <td><input placeholder="Digite o VIN do veículo" class="inputVin" type="text"></td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
+                        <td><input id="inputVin" placeholder="Digite o VIN do veículo" class="inputVin" type="text" (change)="getChangeVin()"></td>
+                        <td>{{vehicleOdometro}}</td>
+                        <td>{{vehicleNivelCombustivel}}</td>
+                        <td>{{vehicleStatus}}</td>
+                        <td>{{vehicleLat}}</td>
+                        <td>{{vehicleLong}}</td>
                     </tr>
                 </tbody>
             </table>

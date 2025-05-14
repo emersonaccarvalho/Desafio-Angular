@@ -2,5 +2,17 @@
 
 
 <div class="divMain">
-    <img src="/assets/Ranger Farol Desligado.png" alt="">
+    <img [src]="mainImageVehicle" alt="Imagem Central">
+</div>
+
+<div id="elementPopupInfo" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content" style="padding: 0;">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        <img style="width: 30%; align-self: center;" src="/assets/ford-logo_brandlogos.net_yvbgz.png" alt="Logo Ford">
+        <div class="modal-body d-flex justify-content-center align-items-center" style="padding-top: 0; height: 100px;">
+            <span style="align-self: center; text-align: center;" class="spanErrorPopup">Boas-vindas ao Dashboard Ford</span>
+        </div>
+    </div>
+    </div>
 </div>
