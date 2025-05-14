@@ -11,7 +11,7 @@
 <div class="carAndForm">
  
     <div class="divColumnCarAndInfo">
-        <img class="imgFordRanger" src="assets/Ranger Farol Desligado.png" alt="Logo da Ford">
+        <img class="imgFordRanger" [src]="mainImageVehicle" alt="Imagem Ford Ranger">
         <div class="divInfoCar">
             <span class="carTitle">Ford Ranger</span>
             <span class="spanInfoCar">Experimente a potência e a confiabilidade da Ford Ranger. Construída para qualquer aventura, com design inteligente para o uso diário.</span>
@@ -41,7 +41,7 @@
 
         <div class="divInput">
             <i id="userIcon" class="bi bi-person-fill"></i>
-            <input [(ngModel)]="email" placeholder="Insira o seu e-mail" #emailInput class="emailInput" type="email" required>
+            <input [(ngModel)]="email" placeholder="Insira o seu e-mail" #emailInput class="emailInput" type="text" required>
             <i id="infoIcon" class="bi bi-info-circle-fill" (click)="infoApp()"></i>
 
         </div>
@@ -53,7 +53,7 @@
 
         <div class="form-check form-switch">
             <span class="autoLogin">Logar automaticamente</span>
-            <input class="form-check-input" type="checkbox" id="meuToggle">
+            <input class="form-check-input" type="checkbox" id="rememberMe">
         </div>
 
         <button [ngClass]="{ 'bttnEntrarAtivo': validarCampos(), 'bttnEntrarInativo': !validarCampos() }" (click)="conferirDados()">Entrar</button>

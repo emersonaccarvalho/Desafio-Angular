@@ -4,16 +4,21 @@
 
 <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
     <div class="offcanvas-header">
-      <img class="fordLogo" src="/assets/ford.png" alt="">
+      <img class="fordLogo" src="assets/ford.png" alt="Logo Ford">
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-        <div class="offcanvas-body custom-background">
-          <div class="divWithSpanMenu">
+    <div class="offcanvas-body custom-background">
+      <div class="divWithSpanMenu">
 
-            
-            <span class="spanItemsMenu" (click)="goToHome()">Home</span>
-             
-            <span class="spanItemsMenu" (click)="goToLogin()">Login</span>
-            <span class="spanItemsMenu" (click)="goToDashboard()">Dashboard</span>
-           </div>
-         </div>
+        
+        <span class="spanItemsMenu" (click)="goToHome()">Home</span>
+        @if(this.isLoggedIn === 'false'){
+        <span  class="spanItemsMenu" (click)="goToLogin()">Login</span>
+        }
+        
+        @if(this.isLoggedIn === 'true'){
+        <span class="spanItemsMenu" (click)="goToDashboard()">Dashboard</span>
+        <span class="spanItemsMenu" (click)="LogTheUserOut()">Logout</span>
+        }
+        </div>
+      </div>
