@@ -38,17 +38,23 @@ export class SigninComponent implements AfterViewInit {
 
   showPopupError(){    
     //Este popup é um popup informativo e não necessariamente de erro. Em caso de credenciais erradas, exibe uma mensagem de erro (esta validação está no HTML com condicional if). Em caso de sucesso, exibe mensagem de sucesso.
-
-    const popupError = new bootstrap.Modal(this.popupError.nativeElement);
+    const popupError = new bootstrap.Modal(this.popupError.nativeElement, {
+      backdrop: false
+    });
     popupError.show();
-
   }
 
  hidePopup() {
-  const popupElement = document.getElementById("popupError");
-  if (popupElement) {
-    popupElement.style.display = "none";
-  }
+  // const popupElement = new bootstrap.Modal(this.popupError.nativeElement);
+  // if (popupElement) {
+  //   popupElement.hide();
+  // }
+  const popupError = new bootstrap.Modal(this.popupError.nativeElement, {
+    backdrop: false
+  });
+  popupError.hide()
+  
+  
 }
 
 

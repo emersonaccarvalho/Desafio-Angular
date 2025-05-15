@@ -50,8 +50,6 @@ export class DashboardComponent implements AfterViewInit {
     const input = document.getElementById("inputVin") as HTMLInputElement;
     this.vinInput = input.value;
     this.setVehicleInfo(this.vinInput)
-    console.log("Entrou no change e enviando")
-    console.log(this.vinInput)
   }
 
   setImagem() {
