@@ -15,13 +15,17 @@ import { Router} from '@angular/router';
 })
 export class SigninComponent implements AfterViewInit {
   constructor(private http:HttpClient, private router:Router){}
+  rememberMe:boolean = false;
+  inputRemember!: HTMLInputElement;
+
 
   ngAfterViewInit(): void {
-    this.setImagem();
-    this.focusEmail();
-    if (this.isLoggedIn === "true"){
-      this.router.navigate(['/']);
-    }
+  
+  this.setImagem();
+  this.focusEmail();
+  if (this.isLoggedIn === "true"){
+    this.router.navigate(['/']);
+  }
   }
   
   @ViewChild('emailInput') inputEmail!: ElementRef;
@@ -62,7 +66,7 @@ export class SigninComponent implements AfterViewInit {
   email = '';
   senha = '';
   mainImageVehicle:string = "";
-  remember = document.getElementById("rememberMe") as HTMLInputElement;
+  
   isLoggedIn = localStorage.getItem('loggedIn');
 ;
 
@@ -88,7 +92,8 @@ export class SigninComponent implements AfterViewInit {
     }).subscribe({
       next: (res) => {
         this.credenciaisCorretas = true;
-        localStorage.setItem('loggedIn', 'true');
+        // localStorage.setItem('loggedIn', 'true');
+        this.saveUser()
         this.soltarConfete();
         this.showPopupError();
         setTimeout(() => {
@@ -102,6 +107,20 @@ export class SigninComponent implements AfterViewInit {
         this.showPopupError();
       }
     })
+  }
+
+  saveUser(){
+    this.inputRemember = document.getElementById("rememberMe") as HTMLInputElement;
+    this.rememberMe = this.inputRemember.checked;
+    if (this.rememberMe === true){
+      //salvar no local storage
+      localStorage.setItem('loggedIn', 'true');  
+   
+    } else {
+      //salvar no session storage
+      sessionStorage.setItem('loggedIn', 'true'); 
+    }
+
   }
 
   //Função que vai gravar a imagem inicial da Ford ranger na tela

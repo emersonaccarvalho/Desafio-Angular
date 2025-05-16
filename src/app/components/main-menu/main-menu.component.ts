@@ -11,13 +11,17 @@ import { Router } from '@angular/router';
 export class MainMenuComponent implements AfterViewInit {
   constructor(private http:HttpClient, private router:Router){}
 
-  isLoggedIn = localStorage.getItem('loggedIn');
+  isLocalStorage = localStorage.getItem('loggedIn');
+  isSessionStorage = sessionStorage.getItem('loggedIn');
+
+
+
   logado:Boolean = false;
   mainImageVehicle:string = "";
 
   ngAfterViewInit(): void {
     this.setImagem();
-    if (this.isLoggedIn === 'true'){
+    if (this.isLocalStorage == 'true' || this.isSessionStorage == 'true'){
       this.logado = true;
     } else {
       this.router.navigate(["/signin"]);
@@ -27,7 +31,7 @@ export class MainMenuComponent implements AfterViewInit {
   LogTheUserOut(){
     localStorage.setItem('loggedIn', 'false');
     this.logado = false;
-    this.isLoggedIn = 'false';
+    this.isLocalStorage = 'false';
     this.router.navigate(["/signin"]);
 
   }

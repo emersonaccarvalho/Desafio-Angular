@@ -20,8 +20,10 @@ export class HomeComponent implements AfterViewInit{
     this.setImagem();
     const popup = document.getElementById("elementPopupInfo") as HTMLElement;
     const popupInfo = new Modal(popup);
-    const isLoggedIn = localStorage.getItem('loggedIn');
-    if (isLoggedIn == 'true'){
+    const islocalStorage = localStorage.getItem('loggedIn');
+    const issessionStorage = sessionStorage.getItem('loggedIn');
+
+    if (islocalStorage == 'true' || issessionStorage == 'true'){
     popupInfo.show();
     }
   }

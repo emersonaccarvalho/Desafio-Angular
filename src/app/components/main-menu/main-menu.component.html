@@ -12,11 +12,11 @@
 
         
         <span class="spanItemsMenu" (click)="goToHome()">Home</span>
-        @if(this.isLoggedIn === 'false'){
+        @if(this.logado === false){
         <span  class="spanItemsMenu" (click)="goToLogin()">Login</span>
         }
         
-        @if(this.isLoggedIn === 'true'){
+        @if(this.logado === true){
         <span class="spanItemsMenu" (click)="goToDashboard()">Dashboard</span>
         <span class="spanItemsMenu" (click)="LogTheUserOut()">Logout</span>
         }
